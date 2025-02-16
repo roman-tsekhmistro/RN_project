@@ -15,7 +15,7 @@ const TabIcon = ({
   title: string;
 }) => {
   return (
-    <View className='flex-1 mt-3 flex flex-col items-center'>
+    <View className='flex flex-col items-center flex-1 mt-3'>
       <Image
         source={icon}
         tintColor={focused ? '#0061FF' : '#666876'}
@@ -76,6 +76,16 @@ const TabsLayout = () => {
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <TabIcon icon={icons.person} title='Profile' focused={focused} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name='sign-in'
+        options={{
+          title: 'Sign In',
+          headerShown: false,
+          tabBarIcon: ({ focused }) => (
+            <TabIcon icon={icons.info} title='Sign In' focused={focused} />
           ),
         }}
       />
